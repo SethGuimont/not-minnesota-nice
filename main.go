@@ -10,11 +10,15 @@ import (
 
 func main() {
 	router := gin.Default()
-	router.LoadHTMLGlob("views/*")
+	router.LoadHTMLFiles("views/index.html", "views/episodes.html")
 	router.Static("/views", "./views")
 
 	router.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.tmpl", nil)
+		c.HTML(http.StatusOK, "index.html", nil)
+	})
+
+	router.GET("/episodes", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "episodes.html", nil)
 	})
 
 	router.GET("/stream/:filename", func(c *gin.Context) {
