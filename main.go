@@ -15,10 +15,11 @@ func main() {
 	router.Static("/views", "./views")
 	router.LoadHTMLGlob("views/*.tmpl")
 
-    config := cors.DefaultConfig()
-    router.Use(cors.New(config))
-
-
+	config := cors.DefaultConfig()
+	config.AllowAllOrigins = true
+	config.AllowMethods = []string{"GET", "POST"}
+	config.AllowMethods = []string{"X-Requested-With", "Authorization", "Origin", "Content-Length", "Content-Type"}
+	router.Use(cors.New(config))
 
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl", gin.H{

@@ -7,6 +7,7 @@ toolchain go1.23.2
 require github.com/gin-gonic/gin v1.10.0
 
 require (
+	github.com/Valiben/gin_unit_test v0.0.0-20181205064931-674aee46d090 // indirect
 	github.com/a-h/templ v0.2.793 // indirect
 	github.com/bytedance/sonic v1.11.6 // indirect
 	github.com/bytedance/sonic/loader v0.1.1 // indirect
