@@ -1,11 +1,4 @@
-<!Doctype html>
-	<head>
-	   <html lang="en">
-	   <link rel="stylesheet" href="/views/style.css">
-	   <title>Not Minnesota Nice - Episodes</title>
-	</head>
-	<body>
-
+{{ template "head" . }}
         <header>
 			<h1>
 				Play Episodes Directly
@@ -40,8 +33,7 @@
             </figure>
             </div>
 		</main>
-		<footer>
-		</footer>
+	   {{ template "footer" .}}
 	</body>
 	</html>
 	<script>
