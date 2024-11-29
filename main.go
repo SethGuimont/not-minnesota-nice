@@ -13,6 +13,7 @@ import (
 func main() {
 	router := gin.Default()
 	router.Static("/views", "./views")
+	router.StaticFS("/media", http.Dir("media"))
 	router.LoadHTMLGlob("views/*.tmpl")
 
 	config := cors.DefaultConfig()
@@ -30,6 +31,12 @@ func main() {
 	router.GET("/episodes", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "episodes.tmpl", gin.H{
 			"title": "Episodes",
+		})
+	})
+
+	router.GET("/latest", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "latest.tmpl", gin.H{
+			"title": "Latest Video",
 		})
 	})
 

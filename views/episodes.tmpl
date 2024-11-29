@@ -1,15 +1,6 @@
 {{ template "head" . }}
-        <header>
-			<h1>
-				Play Episodes Directly
-			</h1>
-			<nav>
-	          <ul>
-					<li><a href="/">Home</a></li>
-                    <li><a href="episodes">Episodes</a></li>
-				</ul>
-			</nav>
-		</header>
+    <body>
+    {{ template "header" .}}
 		<main>
 
 			<div>
@@ -36,10 +27,3 @@
 	   {{ template "footer" .}}
 	</body>
 	</html>
-	<script>
-		function reloadPage() {
-			setTimeout(function() {
-				window.location.reload();
-			},2000);
-		}
-	</script>

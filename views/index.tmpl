@@ -1,16 +1,8 @@
     {{ template "head" . }}
 	<body>
-	   <header>
-				<h1>
-					The Not Minnesota Nice Podcast
-				</h1>
-				<nav>
-		          <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="episodes">Episodes</a></li>
-                </ul>
-			</nav>
-		</header>
+
+        {{ template "header" . }}
+
 		<main>
 
 		<div>
@@ -26,10 +18,3 @@
 	{{ template "footer" .}}
 	</body>
 	</html>
-	<script>
-		function reloadPage() {
-			setTimeout(function() {
-				window.location.reload();
-			},2000);
-		}
-	</script>
